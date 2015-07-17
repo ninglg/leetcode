@@ -1,2 +1,2 @@
 # leetcode
-Solutions to the problems of LeetCode
+Solutions to the problems of LeetCode.

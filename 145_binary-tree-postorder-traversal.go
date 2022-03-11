@@ -6,17 +6,16 @@
  *     Right *TreeNode
  * }
  */
-func preorderTraversal(root *TreeNode) []int {
+func postorderTraversal(root *TreeNode) []int {
     if root == nil {
         return nil
     }
-    
+
     var ret []int
 
+    ret = append(ret, postorderTraversal(root.Left)...)
+    ret = append(ret, postorderTraversal(root.Right)...)
     ret = append(ret, root.Val)
-    ret = append(ret, preorderTraversal(root.Left)...)
-    ret = append(ret, preorderTraversal(root.Right)...)
 
     return ret
 }
-

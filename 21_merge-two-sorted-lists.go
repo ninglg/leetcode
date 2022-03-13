@@ -5,19 +5,21 @@
  *     Next *ListNode
  * }
  */
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-    if l1 == nil {
-		return l2
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+    if list1 == nil {
+		return list2
 	}
-	if l2 == nil {
-		return l1
+    
+	if list2 == nil {
+		return list1
 	}
-	if l1.Val > l2.Val {
-		l2.Next = mergeTwoLists(l1, l2.Next)
-		return l2
+    
+	if list1.Val > list2.Val {
+		list2.Next = mergeTwoLists(list1, list2.Next)
+		return list2
 	} else {
-		l1.Next = mergeTwoLists(l1.Next, l2)
-		return l1
+		list1.Next = mergeTwoLists(list1.Next, list2)
+		return list1
 	}
 }
 
